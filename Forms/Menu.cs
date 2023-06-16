@@ -61,5 +61,13 @@ namespace Projeto_Sagra
         {
             this.Close();                                                     // Fecha o programa
         }
+
+        private void btnRegistrarCompra_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            compra compras = new compra();                                   // Cria uma nova instância do recibos
+            compras.ShowDialog();                                              // Exibe o Form recibos
+            this.Close();
+        }
     }
 }

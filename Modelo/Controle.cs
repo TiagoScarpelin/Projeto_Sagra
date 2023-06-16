@@ -132,11 +132,11 @@ namespace Projeto_Sagra.Modelo
 
 
 
-        public bool incluirP(int numero,String nome, String quantidade)
+        public bool incluirP(int numero,String nome, String quantidade,float valor)
         {
 
             LoginDaoComando loginDao = new LoginDaoComando();
-            this.tem = loginDao.inserirProduto(numero, nome, quantidade);
+            this.tem = loginDao.inserirProduto(numero, nome, quantidade, valor);
 
             if (loginDao.getMensagem() != "")
             {
@@ -148,11 +148,11 @@ namespace Projeto_Sagra.Modelo
 
 
 
-        public bool atualizarP(int numero, String nome, String quantidade)
+        public bool atualizarP(int numero, String nome, String quantidade,float valor)
         {
 
             LoginDaoComando loginDao = new LoginDaoComando();
-            this.tem = loginDao.atualizarProduto(numero, nome, quantidade);
+            this.tem = loginDao.atualizarProduto(numero, nome, quantidade,valor);
 
             if (loginDao.getMensagem() != "")
             {
@@ -219,6 +219,90 @@ namespace Projeto_Sagra.Modelo
 
             return dataTable;
         }
+
+
+        //COMPRA
+
+
+        public bool incluirCompra(int numero, int quantidade,float valor_total, String func, String cliente)
+        {
+
+            LoginDaoComando loginDao = new LoginDaoComando();
+            this.tem = loginDao.registrarCompra(numero, quantidade,valor_total, func, cliente);
+
+            if (loginDao.getMensagem() != "")
+            {
+                this.mensagem = loginDao.getMensagem();
+            }
+
+            return this.tem;
+        }
+
+
+
+
+
+
+        public DataTable consultarCompra()
+        {
+
+            LoginDaoComando loginDao = new LoginDaoComando();
+
+            DataTable dataTable = new DataTable();
+
+            dataTable = loginDao.ConsultarCompra();
+
+            if (loginDao.getMensagem() != "")
+            {
+                this.mensagem = loginDao.getMensagem();
+            }
+
+            return dataTable;
+        }
+
+
+        public DataTable consultaProdutoCompra(int numero)
+        {
+
+            LoginDaoComando loginDao = new LoginDaoComando();
+
+            DataTable dataTable = new DataTable();
+
+            dataTable = loginDao.ConsultarProCompra(numero);
+
+            if (loginDao.getMensagem() != "")
+            {
+                this.mensagem = loginDao.getMensagem();
+            }
+
+            return dataTable;
+        }
+
+
+
+
+
+
+        //TESTE
+
+        public float consultarPRO(int numero)
+        {
+
+            LoginDaoComando loginDao = new LoginDaoComando();
+
+
+            float valor = loginDao.consultarValor(numero);
+
+            if (loginDao.getMensagem() != "")
+            {
+                this.mensagem = loginDao.getMensagem();
+            }
+
+            return valor;
+        }   
+
+
+
 
     }
 }

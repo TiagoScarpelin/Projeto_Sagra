@@ -22,8 +22,10 @@ namespace Projeto_Sagra
 
             int numero = int.Parse(txtId.Text);
 
+            float valor = float.Parse(txtValor.Text);
+
             // Chama o método incluirP do objeto controle, passando os valores dos campos txtNomeP e txtQuantidadeP como argumentos.
-            controle.incluirP(numero, txtNomeP.Text, txtQuantidadeP.Text);
+            controle.incluirP(numero, txtNomeP.Text, txtQuantidadeP.Text, valor);
 
             if (controle.getMensagem() == "")
             {
@@ -53,8 +55,10 @@ namespace Projeto_Sagra
 
             int numero = int.Parse(txtId.Text);
 
+            float valor = float.Parse(txtValor.Text);
+
             // Chama o método atualizarP do objeto controle, passando os valores do ID, txtNomeP e txtQuantidadeP como argumentos.
-            controle.atualizarP(numero, txtNomeP.Text, txtQuantidadeP.Text);
+            controle.atualizarP(numero, txtNomeP.Text, txtQuantidadeP.Text, valor);
 
             if (controle.getMensagem() == "")
             {

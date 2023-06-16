@@ -39,6 +39,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSair = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRegistrarCompra = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +55,7 @@
             this.btnCadastroC.FillColor = System.Drawing.Color.Black;
             this.btnCadastroC.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnCadastroC.ForeColor = System.Drawing.Color.White;
-            this.btnCadastroC.Location = new System.Drawing.Point(484, 139);
+            this.btnCadastroC.Location = new System.Drawing.Point(484, 121);
             this.btnCadastroC.Name = "btnCadastroC";
             this.btnCadastroC.Size = new System.Drawing.Size(226, 45);
             this.btnCadastroC.TabIndex = 13;
@@ -71,7 +72,7 @@
             this.btnCadastroF.FillColor = System.Drawing.Color.Black;
             this.btnCadastroF.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastroF.ForeColor = System.Drawing.Color.White;
-            this.btnCadastroF.Location = new System.Drawing.Point(484, 190);
+            this.btnCadastroF.Location = new System.Drawing.Point(484, 172);
             this.btnCadastroF.Name = "btnCadastroF";
             this.btnCadastroF.Size = new System.Drawing.Size(226, 45);
             this.btnCadastroF.TabIndex = 14;
@@ -88,7 +89,7 @@
             this.guna2Button3.FillColor = System.Drawing.Color.Black;
             this.guna2Button3.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(484, 241);
+            this.guna2Button3.Location = new System.Drawing.Point(484, 223);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(226, 45);
             this.guna2Button3.TabIndex = 15;
@@ -105,7 +106,7 @@
             this.guna2Button4.FillColor = System.Drawing.Color.Black;
             this.guna2Button4.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(484, 292);
+            this.guna2Button4.Location = new System.Drawing.Point(484, 325);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(226, 45);
             this.guna2Button4.TabIndex = 16;
@@ -192,19 +193,37 @@
             this.btnSair.FillColor = System.Drawing.Color.Black;
             this.btnSair.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(484, 343);
+            this.btnSair.Location = new System.Drawing.Point(484, 376);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(226, 45);
             this.btnSair.TabIndex = 20;
             this.btnSair.Text = "Sair";
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // Form2
+            // btnRegistrarCompra
+            // 
+            this.btnRegistrarCompra.BorderRadius = 20;
+            this.btnRegistrarCompra.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRegistrarCompra.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRegistrarCompra.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRegistrarCompra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRegistrarCompra.FillColor = System.Drawing.Color.Black;
+            this.btnRegistrarCompra.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnRegistrarCompra.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrarCompra.Location = new System.Drawing.Point(484, 274);
+            this.btnRegistrarCompra.Name = "btnRegistrarCompra";
+            this.btnRegistrarCompra.Size = new System.Drawing.Size(226, 45);
+            this.btnRegistrarCompra.TabIndex = 21;
+            this.btnRegistrarCompra.Text = "Registrar Compra";
+            this.btnRegistrarCompra.Click += new System.EventHandler(this.btnRegistrarCompra_Click);
+            // 
+            // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRegistrarCompra);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2ControlBox1);
@@ -217,7 +236,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form2";
+            this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sagra Tecnologia";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -240,5 +259,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnSair;
+        private Guna.UI2.WinForms.Guna2Button btnRegistrarCompra;
     }
 }

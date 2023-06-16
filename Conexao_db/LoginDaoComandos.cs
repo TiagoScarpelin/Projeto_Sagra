@@ -210,10 +210,10 @@ namespace Projeto_Sagra.Conexao_db
 
 
 
-        public bool inserirProduto(int numero,String nome, String quantidade)
+        public bool inserirProduto(int numero,String nome, String quantidade,float valor)
 
         {
-            comm.CommandText = "INSERT INTO produtos (numero,nome,quantidade) VALUES ('" + @numero + "','" + @nome + "', '" + @quantidade + "');";
+            comm.CommandText = "INSERT INTO produtos (numero,nome,quantidade,valor) VALUES ('" + @numero + "','" + @nome + "', '" + @quantidade + "','" + @valor + "');";
 
             try
             {
@@ -236,10 +236,10 @@ namespace Projeto_Sagra.Conexao_db
 
 
 
-        public bool atualizarProduto(int numero, String nome, String quantidade)
+        public bool atualizarProduto(int numero, String nome, String quantidade,float valor)
         {
 
-            comm.CommandText = "UPDATE produtos SET nome = '" + @nome + "', quantidade = '" + @quantidade + "' WHERE numero = " + @numero + ";";
+            comm.CommandText = "UPDATE produtos SET nome = '" + @nome + "', quantidade = '" + @quantidade + "', '" + @valor + "' WHERE numero = " + @numero + ";";
 
 
             try
@@ -294,7 +294,7 @@ namespace Projeto_Sagra.Conexao_db
         public DataTable ConsultarRecibo(int numero)
         {
 
-            comm.CommandText = "SELECT Numero,data_compra AS 'Data da compra',valor_total AS 'Valor Total',id_funcionario AS 'Funcionario',cpf_cliente AS 'CPF do Cliente' FROM recibo WHERE numero = " + @numero + " ;";
+            comm.CommandText = "SELECT numero AS 'Codigo do produto',data_compra AS 'Data da compra',valor_total AS 'Valor Total',id_funcionario AS 'Funcionario',cpf_cliente AS 'CPF do Cliente' FROM recibo WHERE id = " + @numero + " ;";
 
 
             try
@@ -356,7 +356,134 @@ namespace Projeto_Sagra.Conexao_db
         }
 
 
+        //COMPRA
 
+
+        public bool registrarCompra(int numero, int quantidade,float valor_total, String func, String cliente)
+
+        {
+
+            // PEGA A DATA ATUAL E FORMATA ELA (YYYY-MM-DD)
+
+            String formatarDia = String.Format("{0:s}", DateTime.Today);
+
+            comm.CommandText = "INSERT INTO recibo (numero,quantidade,data_compra,valor_total,id_funcionario,cpf_cliente) VALUES ('" + @numero + "','" + @quantidade + "','" + @formatarDia + "','" + @valor_total + "','" + @func + "','" + @cliente + "')";
+
+
+            try
+            {
+                comm.Connection = con.conectar();
+
+                MySqlCommand comando = new MySqlCommand(comm.CommandText, comm.Connection);
+                comando.ExecuteNonQuery();
+                con.desconectar();
+                this.tem = true;
+
+            }
+            catch (MySqlException)
+            {
+                this.mensagem = "Erro com o banco de dados!";
+            }
+
+            return this.tem;
+
+        }
+
+
+        public DataTable ConsultarCompra()
+        {
+
+            comm.CommandText = "SELECT * FROM compra;";
+
+
+            try
+            {
+                comm.Connection = con.conectar();
+
+                MySqlCommand comando = new MySqlCommand(comm.CommandText, comm.Connection);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
+
+                DataTable dataTable = new DataTable();
+
+                adapter.Fill(dataTable);
+
+                return dataTable;
+
+            }
+            catch (MySqlException)
+            {
+                this.mensagem = "Erro com o banco de dados!";
+            }
+
+            return null;
+
+        }
+
+        public DataTable ConsultarProCompra(int numero)
+        {
+
+            comm.CommandText = "SELECT * FROM produtos where numero = '" + @numero + "';";
+
+
+            try
+            {
+                comm.Connection = con.conectar();
+
+                MySqlCommand comando = new MySqlCommand(comm.CommandText, comm.Connection);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(comando);
+
+                DataTable dataTable = new DataTable();
+
+                adapter.Fill(dataTable);
+
+                return dataTable;
+
+            }
+            catch (MySqlException)
+            {
+                this.mensagem = "Erro com o banco de dados!";
+            }
+
+            return null;
+
+        }
+
+
+
+
+
+        //TESTE
+
+
+
+        public float consultarValor(int numero)
+        {
+            comm.CommandText = "SELECT * FROM produtos Where numero = " + @numero + ";";
+
+            float valor = 0;
+
+
+            try
+            {
+                comm.Connection = con.conectar();
+                dr = comm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    valor = Convert.ToInt32(dr["valor"].ToString());
+                    return valor;
+                }
+            }
+            catch (MySqlException)
+            {
+                this.mensagem = "Deu ruim!";
+            }
+
+            return valor;
+
+        }
 
 
 

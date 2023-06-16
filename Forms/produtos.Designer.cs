@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(produtos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(produtos));
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,12 +49,12 @@
             this.btnDelProdutos = new FontAwesome.Sharp.IconButton();
             this.btnAttProdutos = new FontAwesome.Sharp.IconButton();
             this.btnAddProdutos = new FontAwesome.Sharp.IconButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.txtValor = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridviewProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridviewProdutos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,6 +79,16 @@
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 4;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(546, 31);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(96, 96);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -87,6 +99,15 @@
             this.label1.Size = new System.Drawing.Size(151, 39);
             this.label1.TabIndex = 2;
             this.label1.Text = "Produtos";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(60, 43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 71);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -102,7 +123,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(54, 349);
+            this.label3.Location = new System.Drawing.Point(54, 284);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 21);
             this.label3.TabIndex = 4;
@@ -112,7 +133,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(51, 485);
+            this.label4.Location = new System.Drawing.Point(54, 359);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 21);
             this.label4.TabIndex = 5;
@@ -150,7 +171,7 @@
             this.txtNomeP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNomeP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNomeP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNomeP.Location = new System.Drawing.Point(170, 342);
+            this.txtNomeP.Location = new System.Drawing.Point(170, 284);
             this.txtNomeP.Name = "txtNomeP";
             this.txtNomeP.PasswordChar = '\0';
             this.txtNomeP.PlaceholderText = "";
@@ -171,7 +192,7 @@
             this.txtQuantidadeP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtQuantidadeP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtQuantidadeP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtQuantidadeP.Location = new System.Drawing.Point(170, 477);
+            this.txtQuantidadeP.Location = new System.Drawing.Point(168, 359);
             this.txtQuantidadeP.Name = "txtQuantidadeP";
             this.txtQuantidadeP.PasswordChar = '\0';
             this.txtQuantidadeP.PlaceholderText = "";
@@ -314,30 +335,43 @@
             this.btnAddProdutos.UseVisualStyleBackColor = true;
             this.btnAddProdutos.Click += new System.EventHandler(this.btnAddProdutos_Click);
             // 
-            // pictureBox2
+            // lblValor
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(546, 31);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(96, 96);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.lblValor.AutoSize = true;
+            this.lblValor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(61, 434);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(50, 21);
+            this.lblValor.TabIndex = 15;
+            this.lblValor.Text = "Valor";
             // 
-            // pictureBox1
+            // txtValor
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(60, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 71);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.txtValor.BorderRadius = 18;
+            this.txtValor.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtValor.DefaultText = "";
+            this.txtValor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtValor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtValor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtValor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtValor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtValor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtValor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtValor.Location = new System.Drawing.Point(168, 434);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.PasswordChar = '\0';
+            this.txtValor.PlaceholderText = "";
+            this.txtValor.SelectedText = "";
+            this.txtValor.Size = new System.Drawing.Size(390, 36);
+            this.txtValor.TabIndex = 16;
             // 
             // produtos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 574);
+            this.Controls.Add(this.txtValor);
+            this.Controls.Add(this.lblValor);
             this.Controls.Add(this.gridviewProdutos);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnDelProdutos);
@@ -358,9 +392,9 @@
             this.Load += new System.EventHandler(this.produtos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridviewProdutos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridviewProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,5 +419,7 @@
         private Guna.UI2.WinForms.Guna2Button btnVoltar;
         private Guna.UI2.WinForms.Guna2DataGridView gridviewProdutos;
         private Guna.UI2.WinForms.Guna2DataGridViewStyler guna2DataGridViewStyler1;
+        private System.Windows.Forms.Label lblValor;
+        private Guna.UI2.WinForms.Guna2TextBox txtValor;
     }
 }
