@@ -1,0 +1,19 @@
+Olá, sou estudante de engenharia da computação, e este é meu projeto, simulando um pequeno sistema de uma empresa, no caso a "Sagra". 
+Realizei a confecção para uma atividade da faculdade e me diverti muito, pretendo realizar muitas melhorias e ir atualizando aqui no GIT para que as pessoas possam ver e me retornarem feedbacks para que eu possa me aperfeiçoar e aprender cada vez mais!
+
+
+Para a utilização do programa é necessário:
+
+1- Possuir Microsoft Visual Studio (2022) instalado no seu computador.
+2- Possuir SGBD MariaDB instalado em seu computador.
+
+Ações necessárias:
+
+1-Carregar o arquivo do banco de dados disponibilizado aqui nos arquivos.
+2-Clonar este repositorio para o seu Visual Studio.
+3-Acessar a classe conexão.cs, que está localizada dentro do projeto, na pasta Conexão_db. Dentro dela você irá encontrar o campo que estabelece conexão com o banco de dados e será necessário colocar a sua senha de acesso ao banco MariaDB,
+que foi previamente escolhida no processo de instalação do banco.
+
+
+
+Espero que se divirta!
