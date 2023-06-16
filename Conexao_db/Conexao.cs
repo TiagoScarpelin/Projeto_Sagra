@@ -8,7 +8,7 @@ namespace Projeto_Sagra.Conexao_db
 
         public Conexao()
         {
-            conn.ConnectionString = @"server=localhost;Port=3306;Database=sagra;User Id=root;Password=ti19010203";
+            conn.ConnectionString = @"server=localhost;Port=3306;Database=sagra;User Id=root;Password=SUASENHA";  //Nao esqueça de por a sua senha do banco.
         }
 
         public MySqlConnection conectar()
